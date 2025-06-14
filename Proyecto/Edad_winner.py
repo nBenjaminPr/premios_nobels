@@ -16,6 +16,10 @@ nobel_df['año'] = nobel_df['year'] - nobel_df['birth_date'].dt.year
 #Infor de la persona mas joven en ganar un premio nobel
 persona_mas_joven = nobel_df.loc[nobel_df['año'].idxmin()]
 
+persona_mas_grande = nobel_df.loc[nobel_df['año'].idxmax()]
+
+print(persona_mas_joven)
+print(persona_mas_grande)
 
 #Grafica por año y edad
 ax = sns.lmplot(
@@ -23,7 +27,9 @@ ax = sns.lmplot(
     y= 'año',
     data= nobel_df,
     aspect=2,
-    line_kws = {'color': 'Black'}
+    line_kws = {'color': 'Black'},
+    #Row= 'category' es para analizar por cada categoria
+    
     )
 
 plt.title('Proporción de ganadores de mujeres por década')
@@ -31,5 +37,5 @@ plt.xlabel('Year')
 plt.ylabel('Edad')
 plt.grid(True)
 
-plt.show()
+#plt.show()
 
