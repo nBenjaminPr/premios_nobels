@@ -6,6 +6,7 @@ import seaborn as sns
 #Ruta del archivo
 nobel_df = pd.read_csv("C:/Users/Usuario/Desktop/Nico2/Proyectos/Premio_Nobel/data/nobel.csv")
 
+#Columna booleana
 nobel_df['female_winner'] = nobel_df['sex'] == 'Female' 
 
 # Decada
@@ -15,6 +16,8 @@ nobel_df ['decade'] = (np.floor(nobel_df['year']/10)*10).astype(int)
 prop_famele_winner = nobel_df.groupby(['decade', 'category'], as_index = False)['female_winner'].mean()
 
 
+
+#Grafica de linea por decada
 plt.rcParams['figure.figsize'] = [11,7]
 
 ax = sns.lineplot(
