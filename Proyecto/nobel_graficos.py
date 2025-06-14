@@ -34,6 +34,8 @@ plt.title('Proporción de ganadores nacidos en EEUU por década')
 plt.xlabel('Década')
 plt.ylabel('Proporción')
 plt.grid(True)
+
+
 #Es para imprimir la grafica
 plt.show()
 
